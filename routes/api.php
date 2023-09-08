@@ -39,7 +39,16 @@ Route::post('cek-status-pinjaman', function (Request $request) {
 
 Route::post('webhook', function (Request $request) {
 
-    Log::info('WEBHOOK URL request: {request}', [
+    Log::info('POST WEBHOOK URL request: {request}', [
+        'request' => json_encode($request)
+    ]);
+ 
+    return response()->json([]);
+});
+
+Route::get('webhook', function (Request $request) {
+
+    Log::info('GET WEBHOOK URL request: {request}', [
         'request' => json_encode($request)
     ]);
  
