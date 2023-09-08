@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Log;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,4 +35,13 @@ Route::post('cek-status-pinjaman', function (Request $request) {
             'total_pembayaran' => 5000000
         ]
     ], 200);
+});
+
+Route::post('webhook', function (Request $request) {
+
+    Log::info('WEBHOOK URL request: {request}', [
+        'request' => json_encode($request)
+    ]);
+ 
+    return response()->json([]);
 });
