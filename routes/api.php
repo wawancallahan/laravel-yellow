@@ -40,7 +40,7 @@ Route::post('cek-status-pinjaman', function (Request $request) {
 Route::post('webhook', function (Request $request) {
 
     Log::info('POST WEBHOOK URL request: {request}', [
-        'request' => json_encode($request)
+        'request' => json_encode($request->all())
     ]);
  
     return response()->json([]);
@@ -49,7 +49,7 @@ Route::post('webhook', function (Request $request) {
 Route::get('webhook', function (Request $request) {
 
     Log::info('GET WEBHOOK URL request: {request}', [
-        'request' => json_encode($request)
+        'request' => json_encode($request->all())
     ]);
  
     return response()->json([]);
